@@ -1,6 +1,7 @@
 import uuid
 from fastapi import APIRouter, File, UploadFile, HTTPException, status
 from services.image import validate_image, resize_image_if_needed, save_image
+from services.vision import analyse_image as vision_analyse_image
 
 analyse_router = APIRouter(prefix="/analyse", tags=["Analyse"])
 

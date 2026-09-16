@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from routes.analyse_router import analyse_router
 
 app = FastAPI(
     title="Netra Vision API",
@@ -19,3 +20,6 @@ async def root():
             "GET /analyses/{analysis_id}": "Retrieve details of a specific analysis by ID",
         },
     }
+
+
+app.include_router(analyse_router)
