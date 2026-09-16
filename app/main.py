@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes.analyse_router import analyse_router
+from routes.analyse_router import analyse_router, analyses_router
 
 app = FastAPI(
     title="Netra Vision API",
@@ -23,3 +23,4 @@ async def root():
 
 
 app.include_router(analyse_router)
+app.include_router(analyses_router)
